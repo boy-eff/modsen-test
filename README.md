@@ -1,1 +1,1 @@
-Run `docker compose up` in the root directory for a dev server.
+Run `docker compose up` in the src directory for a dev server.
