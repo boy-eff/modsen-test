@@ -16,8 +16,14 @@ public class AccountController: ControllerBase
     }
 
     [HttpPost]
-    public async Task<Guid> CreateUser([FromBody]RegisterUserDto dto)
+    public async Task<IActionResult> CreateUser([FromBody]RegisterUserDto dto)
     {
-        return await _accountService.RegisterUserAsync(dto);
+        var userId = await _accountService.RegisterUserAsync(dto);
+        if (userId == Guid.Empty)
+        {
+            return BadRequest();
+        }
+
+        return Ok(userId);
     }
 }

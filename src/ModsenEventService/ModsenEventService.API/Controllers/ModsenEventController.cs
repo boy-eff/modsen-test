@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ModsenEventService.Application.Dtos;
 using ModsenEventService.Application.Features.ModsenEvents.Commands;

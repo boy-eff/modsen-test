@@ -23,7 +23,6 @@ public class AccountService : IAccountService
         var createResult = await _userManager.CreateAsync(appUser, registerUserDto.Password);
         if (!createResult.Succeeded)
         {
-            Console.WriteLine("FAIL");
             return Guid.Empty;
         }
 
