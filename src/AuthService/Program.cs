@@ -1,3 +1,4 @@
+using AuthService.AutoMapper;
 using AuthService.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,7 @@ var connectionString = builder.Configuration.GetConnectionString("Default");
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddScopedServices();
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddDatabaseConfiguration(connectionString);
 
 builder.Services.AddAuthenticationConfiguration();
@@ -28,7 +30,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
+app.UseIdentityServer();
 
 app.MapControllers();
 

@@ -4,17 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AuthService.Data;
 
-public class ApplicationDbContext : IdentityDbContext<AppUser>
+public class ApplicationDbContext : IdentityDbContext<AppUser, AppRole, Guid>
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        : base(options)
+    public ApplicationDbContext(DbContextOptions options) : base(options)
     {
-        
     }
 
-    public ApplicationDbContext()
-        : base()
+    protected ApplicationDbContext()
     {
-        
     }
 }
