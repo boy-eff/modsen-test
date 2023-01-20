@@ -45,9 +45,12 @@ public static class ServiceCollectionExtensions
         }).AddEntityFrameworkStores<ApplicationDbContext>();
     }
 
-    public static void AddIdentityServerConfiguration(this IServiceCollection services)
+    public static void AddIdentityServerConfiguration(this IServiceCollection services, string issuerUri)
     {
-        services.AddIdentityServer()
+        services.AddIdentityServer(options =>
+            {
+                options.IssuerUri = issuerUri;
+            })
             .AddDeveloperSigningCredential()
             .AddAspNetIdentity<AppUser>()
             .AddInMemoryApiScopes(IdentityServerConfig.ApiScopes)

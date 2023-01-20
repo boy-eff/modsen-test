@@ -3,6 +3,7 @@ using AuthService.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("Default");
+var issuerUri = builder.Configuration["IssuerUri"];
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -14,7 +15,7 @@ builder.Services.AddDatabaseConfiguration(connectionString);
 builder.Services.AddAuthenticationConfiguration();
 builder.Services.AddAuthorization();
 builder.Services.AddAspNetIdentityConfiguration();
-builder.Services.AddIdentityServerConfiguration();
+builder.Services.AddIdentityServerConfiguration(issuerUri);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -22,7 +23,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (!app.Environment.IsProduction())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
