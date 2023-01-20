@@ -1,5 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using ModsenEventService.Application.Dtos;
+using ModsenEventService.Application.Features.ModsenEvents.Commands;
+using ModsenEventService.Application.Features.ModsenEvents.Queries;
 using ModsenEventService.Domain.Models;
 
 namespace ModsenEventService.API.Controllers;
@@ -16,32 +19,42 @@ public class ModsenEventController : ControllerBase
     }
 
     [HttpGet]
-    public IList<ModsenEvent> GetAsync()
+    public async Task<IActionResult> GetAsync()
     {
-        throw new NotImplementedException();
+        var query = new GetModsenEventsQuery();
+        var result =  await _mediator.Send(query);
+        return Ok(result);
     }
 
     [HttpGet("{eventId}")]
-    public ModsenEvent GetByIdAsync([FromQuery]Guid eventId)
+    public async Task<IActionResult> GetByIdAsync(Guid eventId)
     {
-        throw new NotImplementedException();
+        var query = new GetModsenEventByIdQuery(eventId);
+        var result =  await _mediator.Send(query);
+        return Ok(result);
     }
 
     [HttpPost]
-    public Task AddAsync()
+    public async Task<IActionResult> AddAsync([FromBody]ModsenEventDto dto)
     {
-        throw new NotImplementedException();
+        var query = new AddModsenEventCommand(dto);
+        var result =  await _mediator.Send(query);
+        return Ok(result);
     }
 
     [HttpPut]
-    public Task UpdateAsync()
+    public async Task<IActionResult> UpdateAsync([FromBody]ModsenEventDto dto)
     {
-        throw new NotImplementedException();
+        var query = new UpdateModsenEventCommand(dto);
+        var result =  await _mediator.Send(query);
+        return Ok();
     }
 
     [HttpDelete]
-    public Task DeleteAsync()
+    public async Task<IActionResult> DeleteAsync([FromQuery]Guid eventId)
     {
-        throw new NotImplementedException();
+        var query = new DeleteModsenEventCommand(eventId);
+        var result =  await _mediator.Send(query);
+        return Ok();
     }
 }

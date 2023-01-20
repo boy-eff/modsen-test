@@ -9,5 +9,5 @@ public class ModsenEvent
     public string Speaker { get; set; }
     public DateTime Time { get; set; }
     public string Place { get; set; }
-    public DateTime CreationTime { get; init; } = DateTime.Now;
+    public DateTimeOffset CreationTime { get; } = DateTimeOffset.Now.ToUniversalTime();
 }

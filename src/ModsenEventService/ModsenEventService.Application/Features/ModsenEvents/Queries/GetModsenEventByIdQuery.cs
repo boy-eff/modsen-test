@@ -4,4 +4,12 @@ using ModsenEventService.Domain.Models;
 
 namespace ModsenEventService.Application.Features.ModsenEvents.Queries;
 
-public record GetModsenEventByIdQuery(Guid EventId) : IRequest, IRequest<ModsenEventDto>;
+public class GetModsenEventByIdQuery : IRequest<ModsenEventDto>
+{
+    public GetModsenEventByIdQuery(Guid eventId)
+    {
+        EventId = eventId;
+    }
+
+    public Guid EventId { get; }
+}

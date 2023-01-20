@@ -3,4 +3,7 @@ using ModsenEventService.Application.Dtos;
 
 namespace ModsenEventService.Application.Features.ModsenEvents.Queries;
 
-public record GetModsenEventsQuery() : IRequest, IRequest<IList<ModsenEventDto>>;
+public class GetModsenEventsQuery : IRequest<IList<ModsenEventDto>>
+{
+    
+}
