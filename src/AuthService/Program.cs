@@ -34,6 +34,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.UseIdentityServer();
 
+app.ApplyMigrations();
+
 app.MapControllers();
 
 app.Run();

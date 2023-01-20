@@ -1,6 +1,8 @@
 ﻿using System.Net;
 using System.Text.Json;
 using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.EntityFrameworkCore;
+using ModsenEventService.Infrastructure.Data;
 
 namespace ModsenEventService.API.Extensions;
 
@@ -21,5 +23,13 @@ public static class WebApplicationExtensions
                 }
             });
         });
+    }
+    
+    public static void ApplyMigrations(this IApplicationBuilder app)
+    {
+        using var services = app.ApplicationServices.CreateScope();
+
+        var dbContext = services.ServiceProvider.GetService<ApplicationDbContext>();
+        dbContext.Database.Migrate();
     }
 }

@@ -18,7 +18,7 @@ builder.Services.AddAuthenticationConfiguration(config["IdentityServer:Authority
 builder.Services.AddControllers();
 
 var app = builder.Build();
-app.ConfigureExceptionHandler();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -26,7 +26,7 @@ if (app.Environment.IsDevelopment())
 }
 else
 {
-    
+    app.ConfigureExceptionHandler();
 }
 
 //app.UseHttpsRedirection();
@@ -34,5 +34,5 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.ApplyMigrations();
 app.Run();
