@@ -2,11 +2,11 @@
 using ModsenEventService.Application.Dtos;
 using ModsenEventService.Domain.Models;
 
-namespace ModsenEventService.Application.Automapper;
+namespace ModsenEventService.Application.AutoMapper;
 
-public class AutomapperProfiles : Profile
+public class AutomapperProfile : Profile
 {
-    public AutomapperProfiles()
+    public AutomapperProfile()
     {
         CreateMap<ModsenEvent, ModsenEventDto>().ReverseMap();
     }
