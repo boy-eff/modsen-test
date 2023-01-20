@@ -1,9 +1,19 @@
-var builder = WebApplication.CreateBuilder(args);
+using AuthService.Extensions;
 
+var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("Default");
 // Add services to the container.
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddScopedServices();
+builder.Services.AddDatabaseConfiguration(connectionString);
+
+builder.Services.AddAuthenticationConfiguration();
+builder.Services.AddAuthorization();
+builder.Services.AddAspNetIdentityConfiguration();
+builder.Services.AddIdentityServerConfiguration();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
