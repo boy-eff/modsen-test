@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ModsenEventService.Domain\ModsenEventService.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
