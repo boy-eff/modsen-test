@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ModsenEventService.Domain.Models;
 
 namespace ModsenEventService.Infrastructure.Data;
 
@@ -11,4 +12,6 @@ public class ApplicationDbContext : DbContext
     public ApplicationDbContext(DbContextOptions options) : base(options)
     {
     }
+
+    public DbSet<ModsenEvent> ModsenEvents { get; set; }
 }

@@ -10,4 +10,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ModsenEventService.Domain\ModsenEventService.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
