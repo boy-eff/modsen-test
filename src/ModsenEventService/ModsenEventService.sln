@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModsenEventService.API", "ModsenEventService.API\ModsenEventService.API.csproj", "{E8CCE63B-5C14-4D21-8734-7CB83F3EADD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModsenEventService.Application", "ModsenEventService.Application\ModsenEventService.Application.csproj", "{70CC15D0-41DA-40F8-8B1A-9D54631A756D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModsenEventService.Domain", "ModsenEventService.Domain\ModsenEventService.Domain.csproj", "{EC317B7C-8B1B-4BC6-840C-24865FC46694}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModsenEventService.Infrastructure", "ModsenEventService.Infrastructure\ModsenEventService.Infrastructure.csproj", "{888EC456-D01D-4751-AB34-E9B11CF676CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8CCE63B-5C14-4D21-8734-7CB83F3EADD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8CCE63B-5C14-4D21-8734-7CB83F3EADD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8CCE63B-5C14-4D21-8734-7CB83F3EADD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8CCE63B-5C14-4D21-8734-7CB83F3EADD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70CC15D0-41DA-40F8-8B1A-9D54631A756D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70CC15D0-41DA-40F8-8B1A-9D54631A756D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70CC15D0-41DA-40F8-8B1A-9D54631A756D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70CC15D0-41DA-40F8-8B1A-9D54631A756D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC317B7C-8B1B-4BC6-840C-24865FC46694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC317B7C-8B1B-4BC6-840C-24865FC46694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC317B7C-8B1B-4BC6-840C-24865FC46694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC317B7C-8B1B-4BC6-840C-24865FC46694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{888EC456-D01D-4751-AB34-E9B11CF676CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{888EC456-D01D-4751-AB34-E9B11CF676CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{888EC456-D01D-4751-AB34-E9B11CF676CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{888EC456-D01D-4751-AB34-E9B11CF676CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
