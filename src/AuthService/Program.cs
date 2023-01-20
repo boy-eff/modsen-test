@@ -1,5 +1,6 @@
 using AuthService.AutoMapper;
 using AuthService.Extensions;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("Default");
@@ -18,7 +19,7 @@ builder.Services.AddAspNetIdentityConfiguration();
 builder.Services.AddIdentityServerConfiguration(issuerUri);
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerConfiguration();
 
 var app = builder.Build();
 

@@ -5,6 +5,7 @@ using AuthService.Interfaces;
 using AuthService.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 namespace AuthService.Extensions;
 
@@ -55,5 +56,22 @@ public static class ServiceCollectionExtensions
             .AddAspNetIdentity<AppUser>()
             .AddInMemoryApiScopes(IdentityServerConfig.ApiScopes)
             .AddInMemoryClients(IdentityServerConfig.Clients);
+    }
+
+    public static IServiceCollection AddSwaggerConfiguration(this IServiceCollection services)
+    {
+        return services.AddSwaggerGen(options => {
+            options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+            {
+                Type = SecuritySchemeType.OAuth2,
+                Flows = new OpenApiOAuthFlows()
+                {
+                    Password = new OpenApiOAuthFlow()
+                    {
+                        TokenUrl = new Uri("/connect/token", UriKind.Relative)
+                    }
+                }
+            });
+        });
     }
 }
