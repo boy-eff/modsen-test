@@ -3,7 +3,7 @@ using System.Reflection;
 using MediatR;
 using Microsoft.AspNetCore.Diagnostics;
 using ModsenEventService.API.Extensions;
-using ModsenEventService.Application.AutoMapper;
+using ModsenEventService.Application.Helpers.AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;

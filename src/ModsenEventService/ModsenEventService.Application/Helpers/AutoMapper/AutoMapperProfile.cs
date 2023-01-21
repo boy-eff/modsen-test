@@ -2,7 +2,7 @@
 using ModsenEventService.Application.Dtos;
 using ModsenEventService.Domain.Models;
 
-namespace ModsenEventService.Application.AutoMapper;
+namespace ModsenEventService.Application.Helpers.AutoMapper;
 
 public class AutomapperProfile : Profile
 {

@@ -1,5 +1,8 @@
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using ModsenEventService.Application.Dtos;
+using ModsenEventService.Application.Helpers.FluentValidation;
 using ModsenEventService.Application.Interfaces;
 using ModsenEventService.Infrastructure.Data;
 using ModsenEventService.Infrastructure.Data.Repositories;
@@ -10,6 +13,7 @@ namespace ModsenEventService.API.Extensions
     {
         public static IServiceCollection AddScopedServices(this IServiceCollection services)
         {
+            services.AddScoped<IValidator<ModsenEventDto>, ModsenEventValidator>();
             return services.AddScoped<IModsenEventRepository, ModsenEventRepository>();
         }
         
