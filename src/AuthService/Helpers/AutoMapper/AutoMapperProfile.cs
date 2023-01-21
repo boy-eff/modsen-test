@@ -2,7 +2,7 @@
 using AuthService.Dtos;
 using AutoMapper;
 
-namespace AuthService.AutoMapper;
+namespace AuthService.Helpers.AutoMapper;
 
 public class AutoMapperProfile: Profile
 {

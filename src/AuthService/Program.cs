@@ -1,5 +1,5 @@
-using AuthService.AutoMapper;
 using AuthService.Extensions;
+using AuthService.Helpers.AutoMapper;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);

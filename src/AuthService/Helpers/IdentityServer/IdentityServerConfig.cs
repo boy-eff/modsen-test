@@ -1,7 +1,7 @@
 ﻿using IdentityModel;
 using IdentityServer4.Models;
 
-namespace AuthService.IdentityServer;
+namespace AuthService.Helpers.IdentityServer;
 
 public class IdentityServerConfig
 {
