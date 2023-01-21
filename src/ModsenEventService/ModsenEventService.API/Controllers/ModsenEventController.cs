@@ -10,6 +10,7 @@ using ModsenEventService.Domain.Models;
 namespace ModsenEventService.API.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("api/events")]
 public class ModsenEventController : ControllerBase
 {
